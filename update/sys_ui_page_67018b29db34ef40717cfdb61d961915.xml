@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var app = angular.module('AEMappingsModule',[]);
+app.controller('AEMappingsController', ["$scope", "$timeout", function($scope, $timeout) {
+	$scope.isLoading = true;
+	$scope.isLoaded = false;
+	$scope.catalogs = [];
+	$scope.categories = [];
+	$scope.items = [];
+	$scope.catalogArray = "";
+	
+	var getCatalog = function(){
+		var grCatalog = new GlideAjax('AutomationAPI');
+		grCatalog.addParam('sysparm_name','getCatalog');
+		console.log("In get catalog");
+		grCatalog.getXML(processCatalogList);
+	};
+	
+	var processCatalogList = function(response){
+		var resultData = response.responseXML.documentElement.getAttribute("answer");
+		var catalogData = "{" + resultData + "}";
+			$scope.catalogs = JSON.parse(catalogData);
+			$scope.catalogArray = Object.keys($scope.catalogs).map(function (value, index) {
+				console.log("creating keys - " + value + " - " + $scope.catalogs[value]);
+				return { sysID: value, values: $scope.catalogs[value] };
+				});
+				console.log("Catalog Data - " + catalogData);
+				$scope.catalogName = $scope.catalogArray[0];
+			};
+			
+			$scope.getSelectedCatlogs = function(){
+				alert($scope.catalogName.values.title);
+			};
+			(function ($) {
+				$(document).ready(function()
+				{
+					getCatalog();
+					// executes when HTML-Document is loaded and DOM is ready
+					console.log("(document).ready was called - document is ready!");
+					$scope.isLoading = false;
+					$scope.isLoaded = true;
+				});
+			})(jQuery);
+			
+			
+			
+		}]);]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_aetp_automatione_AE_mapping_UI.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<html>	
+<head>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+<script>
+	(function ($) {
+	$(window).load(function() {
+		$(".se-pre-con").fadeOut("slow");;
+	});
+	})(jQuery);
+</script>
+<style>
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(preloader.gif) center no-repeat #fff;
+}
+
+table, th {
+    border: 2px solid f57e20;
+}
+.custom_font_header{
+font-family: 'PT Sans';
+padding: 1%;
+}
+
+.border_custom{
+border: 2px solid rgb(245,126,32);
+}
+.back_color{
+background-color: #f57e20;
+}
+.btn_margin{
+	margin: 4px;
+}
+	</style>
+</head>
+<body>
+<div ng-app="AEMappingsModule" ng-controller="AEMappingsController">
+<div class="se-pre-con" ng-if="isLoading"></div>
+<div id="content-pane" ng-if="isLoaded">
+<div class="container fluid" style="background-color:#e7e9eb; border-width: 2px; border-style: groove; box-shadow: 0 1px 3px 1px black;">
+		<div class="row">
+			<div class="col-md-12">
+				<img src="AELogo.png"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<h3 class="custom_font_header">Mapping Details</h3>
+			</div>
+			<div class="col-sm-9" style="padding: 1%; text-align:right;">
+					<button class="btn btn-primary btn_margin pull-right" type="button"
+						id="updateAction">Update</button>
+					<button class="btn btn-primary btn_margin pull-right" type="button"
+						id="cancelAction">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<br/>
+     <div class="container fluid" id="mainDiv">
+		<div id="service" class="col-sm-12 "> 
+			<div class="header_details border_custom custom_font_header back_color" style="font-size: 20px; font-weight: bold;">Catalog Service</div>  
+					
+			<div id="serviceRequest">
+				<table id="serviceRequestTable" class ="table table-stripped border_custom"  style="table-layout:fixed" > 
+			    	 <tr>
+				    	  <td class="col-sm-3 custom_font_header">Service Catalog</td>
+						  <td class="col-sm-9 custom_font_header"><center><select id="catalogreq" ng-model="catalogName" style="width:60%;" ng-options="catalog.values.title for catalog in catalogArray" ng-change="getSelectedCatlogs()"></select></center></td>
+					 </tr>	  
+				</table>	
+			</div>
+		</div>
+		<br/>
+		<div id ="Details" class="col-sm-12">
+			<div class="header_details border_custom custom_font_header back_color" style="font-size: 20px; font-weight: bold;">AE Workflow Details</div> 
+			<div id ="details">
+				<table id ="detailsTable" class ="table table-stripped border_custom"> 
+					<tr>
+						<td class="col-sm-3 custom_font_header">Catalog List</td>
+						<td class="col-sm-9 custom_font_header"><center><select id="cataloglist" ng-model="catItem" style="width:60%;" ng-options="item.name for item in items" onchange="fetchCatAttr()"></select></center></td>
+					</tr>	
+					<tr>
+						<td class="col-sm-3 custom_font_header">Workflow List</td>
+						<td class="col-sm-9 custom_font_header"><center><select id="workflowlist" ng-model="catItem" ng-options="wfname for workflow in workflows" style="width:60%;" onchange="fetchWorkAttr()"></select></center></td>
+					</tr>	  
+				</table>	
+			</div>		
+		</div>
+		<br/>
+		<div id="map" class="col-sm-12">
+			<div class="header_details border_custom custom_font_header back_color" style="font-size: 20px; font-weight: bold;">Mapping Details</div> 
+			<div id ="dynamicTableDiv">
+				<div id="mapping">
+				</div>
+			</div>
+		</div>
+	</div> 
+	</div>
+	</div>
+</body>
+</html>		
+</j:jelly>]]></html>
+        <name>AE_mapping_UI</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-27 09:10:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>67018b29db34ef40717cfdb61d961915</sys_id>
+        <sys_mod_count>134</sys_mod_count>
+        <sys_name>AE_mapping_UI</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_ui_page_67018b29db34ef40717cfdb61d961915</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-07 08:20:55</sys_updated_on>
+    </sys_ui_page>
+</record_update>

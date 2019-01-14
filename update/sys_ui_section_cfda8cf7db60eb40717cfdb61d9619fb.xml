@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="" section_id="cfda8cf7db60eb40717cfdb61d9619fb" sys_domain="global" table="x_aetp_automatione_auxiliary_table" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>8356cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_request</element>
+            <position>1</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>0756cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ritm</element>
+            <position>2</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>8756cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ritmsys_id</element>
+            <position>3</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>0b56cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_sequence</element>
+            <position>4</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>8b56cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sequential</element>
+            <position>5</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>0f56cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_resolved</element>
+            <position>6</position>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 11:52:10</sys_created_on>
+            <sys_id>8f56cdfbdbe0eb40717cfdb61d961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_aetp_automatione_auxiliary_table" sys_domain="global" view="Default view">cfda8cf7db60eb40717cfdb61d9619fb</sys_ui_section>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 11:52:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_aetp_automatione_auxiliary_table</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-21 07:32:12</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>cfda8cf7db60eb40717cfdb61d9619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_aetp_automatione_auxiliary_table</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+            <sys_update_name>sys_ui_section_cfda8cf7db60eb40717cfdb61d9619fb</sys_update_name>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-21 07:32:12</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

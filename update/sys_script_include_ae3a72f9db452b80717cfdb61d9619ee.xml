@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_aetp_automatione.MappingManagementAPIs</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>MappingManagementAPIs</name>
+        <script><![CDATA[var MappingManagementAPIs = Class.create();
+MappingManagementAPIs.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    	//Get list of existing active catalogs available 
+	getCatalog: function(){
+			var catalog=new GlideRecord('sc_catalog');
+			catalog.addQuery('active',true);
+			catalog.query();
+			var catdata=[];
+			gs.addInfoMessage("Test");
+			while(catalog.next()){
+				var catalogListItem = catalog.getValue('title');//'{"title":"'+ catalog.getValue('title') + '", "sys_id" : "' + catalog.getValue('sys_id') +'"}';
+				catdata.push(catalogListItem);
+			}
+			gs.addInfoMessage("Catalog Data - " + catdata);
+			var json = new JSON();
+			var retData = json.encode(catdata);
+			var result = this.newItem('result');
+			result.setAttribute('answer', retData);
+			return "catdata";
+	},
+	//Get list of existing active categories under the selected catalog 
+		getCategories:function(){
+			var catalogID = this.getParameter('sysparm_name1');
+			var queryToRun = "sc_catalog=" + catalogID;
+			var categoryData = [];
+			var categories= new GlideRecord('sc_category');
+			categories.addQuery('active',true);
+			categories.addEncodedQuery(queryToRun);
+			categories.query();
+			while(categories.next()){
+				var category='{"name":"' + categories.getValue('title') +'","sys_id":"' + categories.getValue('sys_id') + '"}';
+					categoryData.push(category);
+				}
+			return categoryData;
+			},
+	//Get list of existing active catalog items under the selected category 
+		getCatItems:function(){
+			var catalogID = this.getParameter('sysparm_name1');
+			var categoryID = this.getParameter('sysparm_name2');
+			var queryToRun = "type!=bundle^sys_class_name!=sc_cat_item_guide^type!=package^sys_class_name!=sc_cat_item_content^sc_catalogsLIKE";
+			queryToRun = queryToRun + catalogID + '^category=' + categoryID;
+			var catalogItemData = [];
+			var catItems= new GlideRecord('sc_cat_item');
+			catItems.addQuery('active',true);
+			catItems.addEncodedQuery(queryToRun);
+			catItems.query();
+			while(getcatitem.next()){
+				var cat_item='{"name":"' + catItems.getValue('name') +'","sys_id":"' + catItems.getValue('sys_id') + '"}';
+					catalogItemData.push(cat_item);
+				}
+			return catalogItemData;
+			},
+		GetWorkflowList: function(){
+		var workflowNames = null;
+		var gw = new GlideRecord('x_aetp_automatione_ae_configuration');
+		gw.addQuery('active',true);
+		gw.query();
+		while(gw.next()){
+			workflowNames = gw.getValue('u_automation_workflow_names');
+		}
+		return workflowNames;
+	},
+	GetQuestions:function(){
+		var selected_item=this.getParameter('sysparm_name1');
+		var queryToRun = "cat_item=" + selected_item + "^typeNOT IN20,24,19";
+		var gx = new GlideRecord('item_option_new');
+		gx.addEncodedQuery(queryToRun);
+		gx.query();
+		var questionsData = [];
+		while(gx.next()){
+			var question_text=gx.getValue('question_text');
+			questionsData.push(question_text);
+		}
+		return questionsData;
+	},
+    type: 'MappingManagementAPIs'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-10 11:43:35</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ae3a72f9db452b80717cfdb61d9619ee</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>MappingManagementAPIs</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_include_ae3a72f9db452b80717cfdb61d9619ee</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-11 11:24:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

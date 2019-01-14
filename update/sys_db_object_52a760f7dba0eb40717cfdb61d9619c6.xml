@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
+    <sys_db_object action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <actions_access>true</actions_access>
+        <alter_access>true</alter_access>
+        <client_scripts_access>true</client_scripts_access>
+        <configuration_access>true</configuration_access>
+        <create_access>true</create_access>
+        <create_access_controls>true</create_access_controls>
+        <delete_access>true</delete_access>
+        <extension_model/>
+        <is_extendable>true</is_extendable>
+        <label>AE:Staging</label>
+        <live_feed_enabled>false</live_feed_enabled>
+        <name>x_aetp_automatione_ae_staging</name>
+        <number_ref display_value="AEST">e5d2bcffdba0eb40717cfdb61d9619a8</number_ref>
+        <provider_class/>
+        <read_access>true</read_access>
+        <super_class/>
+        <sys_class_code/>
+        <sys_class_name>sys_db_object</sys_class_name>
+        <sys_class_path/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-21 10:26:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>52a760f7dba0eb40717cfdb61d9619c6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>AE:Staging</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_db_object_52a760f7dba0eb40717cfdb61d9619c6</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-21 10:29:04</sys_updated_on>
+        <update_access>true</update_access>
+        <user_role display_value="x_aetp_automatione.ae_staging_user" name="x_aetp_automatione.ae_staging_user">99d23c7fdba0eb40717cfdb61d9619bd</user_role>
+        <ws_access>true</ws_access>
+    </sys_db_object>
+</record_update>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="AE:Mapping" max_length="40" name="x_aetp_automatione_ae_mapping" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element label="Catalog Item" max_length="40" name="u_catalog_item" type="string"/>
+        <element label="Questions" max_length="40" name="u_cat_question" type="string"/>
+        <element label="JSON" max_length="4000" name="u_json" type="string_full_utf8"/>
+        <element label="JSON from button" max_length="255" name="u_jsonbutton" type="string_full_utf8"/>
+        <element label="Raw JSON" max_length="4000" name="u_raw_json" type="string_full_utf8"/>
+        <element label="Service Catalog" max_length="40" name="u_service_request" type="string"/>
+        <element label="Workflow Input" max_length="40" name="u_workflow_input" type="string"/>
+        <element label="Workflow Name" max_length="40" name="u_workflow_name" type="string"/>
+        <element label="Workflow URL" max_length="1024" name="u_workflow_url" type="url"/>
+    </element>
+</database>

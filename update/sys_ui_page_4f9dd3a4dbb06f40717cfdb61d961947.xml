@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>This ui page represents the support contact details for Automation Edge Project. </description>
+        <direct>false</direct>
+        <endpoint>x_aetp_automatione_AE_Support_Contact_Details.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<html>
+	<style>
+	#main_div{
+    background-color: #ff9e3d;
+    }
+		td {
+		padding: 15px;
+		text-align: left;
+		font-size: 150%;
+		}
+	</style>
+	<body>
+		<div id="main_div" style="border:1px solid black;">
+			<center>
+				<strong><h1>AutomationEdge for ServiceNow</h1></strong>
+			</center>
+		</div>
+		<br>
+		</br>
+		<br> 
+		</br>
+		<div>
+			<table style="border:1px solid black;" border="2" align="center" cellpadding="10">
+				<tbody>
+					<tr>
+						<td id="main_div">Support Hours of Operation</td>
+						<td><strong>10 AM – 9 PM IST</strong></td>
+					</tr>
+					<tr>
+						<td id="main_div">Support Days of Operation</td>
+						<td><strong>Monday To Friday excluding holidays</strong></td>
+					</tr>
+					<tr>
+						<td id="main_div">Promised Call Response Time</td>
+						<td><strong>4 hours</strong></td>
+					</tr>
+					<tr>
+						<td id="main_div">Promised Call Resolution Time</td>
+						<td><strong>5 business days</strong></td>
+					</tr>
+					<tr>
+						<td id="main_div">Contact Method</td>
+						<td><strong>Email</strong></td>
+					</tr>
+					<tr>
+						<td id="main_div">Contact Details</td>
+						<td><strong><a href="mailto:support@automationedge.com" rel="noopener"      target="_blank">support@automationedge.com</a></strong></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body></html>
+</j:jelly>]]></html>
+        <name>AE_Support_Contact_Details</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-24 06:49:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4f9dd3a4dbb06f40717cfdb61d961947</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>AE_Support_Contact_Details</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_ui_page_4f9dd3a4dbb06f40717cfdb61d961947</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-24 09:52:13</sys_updated_on>
+    </sys_ui_page>
+</record_update>

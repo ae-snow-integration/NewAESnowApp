@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>system</category>
+        <format>png</format>
+        <height>38</height>
+        <image/>
+        <name>AELogo.png</name>
+        <size_bytes>1944</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-09 08:29:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4f844161db49e780717cfdb61d961934</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AELogo.png</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>db_image_4f844161db49e780717cfdb61d961934</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-09 08:30:06</sys_updated_on>
+        <thumbnail/>
+        <width>232</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#0</average_image_color>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <encryption_context/>
+        <file_name>image</file_name>
+        <image_height>38</image_height>
+        <image_width>232</image_width>
+        <size_bytes>1944</size_bytes>
+        <size_compressed>1967</size_compressed>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-09 08:30:06</sys_created_on>
+        <sys_id>72b40d6ddb09e780717cfdb61d9619c1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-09 08:30:07</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>4f844161db49e780717cfdb61d961934</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="72b40d6ddb09e780717cfdb61d9619c1">72b40d6ddb09e780717cfdb61d9619c1</sys_attachment>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-09 08:30:06</sys_created_on>
+        <sys_id>7ab40d6ddb09e780717cfdb61d9619c1</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>2612</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="72b40d6ddb09e780717cfdb61d9619c1">72b40d6ddb09e780717cfdb61d9619c1</sys_attachment>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-09 08:30:06</sys_created_on>
+        <sys_id>fab40d6ddb09e780717cfdb61d9619c1</sys_id>
+    </sys_attachment_doc>
+</record_update>

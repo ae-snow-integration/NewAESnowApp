@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="hasWorkflow=true,text_index_translations" audit="true" create_roles="catalog_admin" extends="task" label="Request" max_length="40" name="sc_request" read_roles="catalog,itil" sizeclass="840" text_index="true" type="collection">
+        <element label="AutomationEdgeResponse" max_length="255" name="x_aetp_automatione_automationedgeresponse" type="string_full_utf8"/>
+    </element>
+</database>

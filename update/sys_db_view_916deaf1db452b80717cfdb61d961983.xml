@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_view">
+    <sys_db_view action="INSERT_OR_UPDATE">
+        <description/>
+        <label>AE Workflow List</label>
+        <name>x_aetp_automatione_ae_workflowlist</name>
+        <plural/>
+        <sys_class_name>sys_db_view</sys_class_name>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-10 10:46:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>916deaf1db452b80717cfdb61d961983</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_aetp_automatione_ae_workflowlist</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_db_view_916deaf1db452b80717cfdb61d961983</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-10 10:46:14</sys_updated_on>
+    </sys_db_view>
+</record_update>

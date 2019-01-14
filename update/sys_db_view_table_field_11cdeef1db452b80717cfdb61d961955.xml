@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_view_table_field">
+    <sys_db_view_table_field action="INSERT_OR_UPDATE">
+        <field>u_workflow_name</field>
+        <sys_class_name>sys_db_view_table_field</sys_class_name>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-10 10:47:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>11cdeef1db452b80717cfdb61d961955</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_workflow_name</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_db_view_table_field_11cdeef1db452b80717cfdb61d961955</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-10 10:47:47</sys_updated_on>
+        <table>x_aetp_automatione_workflow_metadata</table>
+        <view_table display_value="x_aetp_automatione_workflow_metadata">ff7d2ef1db452b80717cfdb61d9619d2</view_table>
+    </sys_db_view_table_field>
+</record_update>

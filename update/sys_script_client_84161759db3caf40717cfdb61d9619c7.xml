@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_catalog_item</field>
+        <global>true</global>
+        <messages/>
+        <name>AE_GetWorkflowList</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+  var ga = new GlideAjax('GetWorkflow');
+	ga.addParam('sysparm_name','GetWorkflow');
+	ga.getXML(populateRawJSOM);
+	get_catalog_items();	
+	getcatalog();	
+   
+}
+function populateRawJSOM(workflowresponse){
+	var getWorkflow = workflowresponse.responseXML.documentElement.getAttribute("answer");
+	g_form.clearValue('u_raw_json');
+	g_form.setValue('u_raw_json', getWorkflow);
+	var raw_data=JSON.parse(getWorkflow);
+	var choice_index=0;
+	var choice_index1=0;
+	for(var i=0;i<raw_data.length;i++)
+	{
+	var b=raw_data[i];
+	for(var y in b){
+		var e=y;
+		var e1=b[e];
+		if(e=="name"){
+		g_form.addOption('u_workflow_name',e1,e1,choice_index);
+		choice_index++;
+			}
+		}
+	}
+}
+function get_catalog_items(){
+	var ga = new GlideAjax('GetWorkflow');
+	ga.addParam('sysparm_name','workflowdata');
+	ga.getXML(populateRawJSOM1);
+}
+function populateRawJSOM1(response){
+	var choice=0;
+	var getWorkflow = response.responseXML.documentElement.getAttribute("answer");
+	var m = getWorkflow.evalJSON();
+	for(var e=0;e<m.length;e++){
+	var m1=m[e];
+	g_form.addOption('u_catalog_item',m1,m1,choice);
+	choice++;
+	}
+}
+function getcatalog(){
+	var ga = new GlideAjax('GetWorkflow');
+	ga.addParam('sysparm_name','GetCatalog');
+	ga.getXML(populateCatalog);
+}
+function populateCatalog(response){
+	var choice=0;
+	var getCat = response.responseXML.documentElement.getAttribute("answer");
+	var c = getCat.evalJSON();
+	for(var e=0;e<c.length;e++){
+	var c1=c[e];
+	g_form.addOption('u_service_request',c1,c1,choice);
+	choice++;
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-26 14:14:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>84161759db3caf40717cfdb61d9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AE_GetWorkflowList</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_client_84161759db3caf40717cfdb61d9619c7</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-26 14:14:47</sys_updated_on>
+        <table>x_aetp_automatione_ae_mapping</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

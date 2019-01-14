@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_aetp_automatione.Close_parent_request_parallel</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Close_parent_request_parallel</name>
+        <script><![CDATA[var Close_parent_request_parallel = Class.create();
+Close_parent_request_parallel.prototype = {
+    initialize: function() {
+    },
+	closereq: function (req_sys_id){
+		var sys_id = req_sys_id;
+		gs.info("Parallel Request Closure for " + req_sys_id); 		
+		var cnt=0;
+		var ga=new GlideAggregate('sc_req_item');
+		ga.addQuery('request', req_sys_id);
+		ga.addQuery('state','!=',3);
+		ga.addAggregate('COUNT');
+		ga.query();
+        ga.next();
+        cnt = ga.getAggregate('COUNT');
+   		return cnt;
+	},
+
+    type: 'Close_parent_request_parallel'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-26 13:20:12</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c26043dddbf8af40717cfdb61d96199e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Close_parent_request_parallel</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_include_c26043dddbf8af40717cfdb61d96199e</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-26 13:20:12</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>cat_item</description>
+        <field>u_catalog_item</field>
+        <global>true</global>
+        <messages/>
+        <name>AE_SetQuestionsOnCatalogItemSelect</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+    var selected_catalog_item=newValue;
+	var ga = new GlideAjax('GetWorkflow');
+	ga.addParam('sysparm_name','GetQuestions');
+	ga.addParam('sysparm_name1',selected_catalog_item);
+	ga.getXML(populateRawJSOM2);
+}
+function populateRawJSOM2(response){
+	var getWorkflow1 = response.responseXML.documentElement.getAttribute("answer");
+	var  myArray = getWorkflow1.evalJSON();
+	var choice=0;
+	var q;
+	g_form.clearOptions('u_cat_question');
+	for(var e=0;e<myArray.length;e++)
+		{
+		q =myArray[e];
+		g_form.addOption('u_cat_question',q,q,choice);
+		choice++;
+		}
+	if(q==null)
+		{
+		g_form.clearOptions('u_cat_question');
+		g_form.addOption('u_cat_question','----None----','--None');
+		}
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-26 14:06:45</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55a313d5db3caf40717cfdb61d961961</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AE_SetQuestionsOnCatalogItemSelect</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_client_55a313d5db3caf40717cfdb61d961961</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-26 14:06:45</sys_updated_on>
+        <table>x_aetp_automatione_ae_mapping</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

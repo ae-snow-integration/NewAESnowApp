@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>AE_SetSequentialFlagOnRequestedItem</name>
+        <order>81</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    var Item;
+	var sequential = '';
+	var sys_id = current.sys_id;
+	var gr = new GlideRecord('sc_item_option_mtom');
+	gr.addQuery('request_item', sys_id);
+	gr.query();
+	while (gr.next()){
+	Item = gr.getValue('sc_item_option');
+	var gr1=new GlideRecord('sc_item_option');
+	gr1.addQuery('sys_id',Item);
+	gr1.query();
+	while (gr1.next()){
+	var test = gr1.getDisplayValue('item_option_new');
+	if (test=='Sequential'){
+	sequential=gr1.value;
+	if (sequential=='Yes')
+	current.x_aetp_vyom_automa_sequential=true;
+	}
+	}
+		current.update();
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-26 12:07:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0ae8721ddbf8af40717cfdb61d9619a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AE_SetSequentialFlagOnRequestedItem</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_0ae8721ddbf8af40717cfdb61d9619a7</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-26 12:07:06</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=0ae8721ddbf8af40717cfdb61d9619a7"/>
+</record_update>

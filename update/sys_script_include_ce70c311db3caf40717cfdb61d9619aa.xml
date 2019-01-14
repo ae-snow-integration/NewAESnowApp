@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_aetp_automatione.GetWorkflow</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetWorkflow</name>
+        <script><![CDATA[var GetWorkflow = Class.create();
+GetWorkflow.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	getCatalog: function(){
+			var catalog=new GlideRecord('sc_catalog');
+			catalog.addQuery('active',true);
+			catalog.query();
+			var catdata=[];
+			gs.addInfoMessage("Test");
+			while(catalog.next()){
+				var catalogListItem = '{"title":"'+ catalog.getValue('title') + '", "sys_id" : "' + catalog.getValue('sys_id') +'"}';
+				catdata.push(catalogListItem);
+			}
+			gs.addInfoMessage("Catalog Data - " + catdata);
+			var json = new JSON();
+			var retData = json.encode(catdata);
+			var result = this.newItem('result');
+			result.setAttribute('answer', retData);
+			return retData;
+			},
+	GetWorkflow: function(){
+		
+		var wjson = null;
+		var gw = new GlideRecord('x_aetp_vyom_automa_ae_configuration');
+		gw.addQuery('workflowjson',"!=", '');
+		gw.query();
+		while(gw.next()){
+		wjson = gw.getValue('workflowjson');
+		}
+		return wjson;
+	},
+	workflowdata:function()
+	{
+		
+		var glide_record_to_get_catalog_item = new GlideRecord('sc_cat_item');
+		glide_record_to_get_catalog_item.addQuery('active',true);
+		glide_record_to_get_catalog_item.query();
+		var arratdata=[];
+		while(glide_record_to_get_catalog_item.next()){
+		var r=glide_record_to_get_catalog_item.getValue('name');
+		arratdata.push(r);
+		}
+		return JSON.stringify(arratdata);
+				},
+	GetQuestions:function(){
+		
+		var selected_item=this.getParameter('sysparm_name1');
+		var gx = new GlideRecord('item_option_new');
+		gx.addQuery('cat_item.name',selected_item);
+		gx.query();
+		var question = [];
+		var data="" ;
+		var obj={};
+			while(gx.next()){
+				var question_text=gx.getValue('question_text');
+				question.push(question_text);
+			}
+			return JSON.stringify(question);
+		
+		
+		},
+		GetCatalog: function(){
+			var catalog_data=new GlideRecord('sc_catalog');
+			catalog_data.addQuery('active',true);
+			catalog_data.query();
+			var catdata=[];
+			while(catalog_data.next())
+			{
+			var service_cat_item=catalog_data.getValue('title');
+			catdata.push(service_cat_item);
+			}
+			return JSON.stringify(catdata);
+		},
+		getCatItems:function(){
+		
+				var catalog_workflow_array=[];
+			var getcatitem= new GlideRecord('sc_cat_item');
+			getcatitem.addQuery('active',true);
+			getcatitem.query();
+			var catlogname= this.getParameter('sysparm_name1');
+			while(getcatitem.next()){
+			var q=getcatitem.getDisplayValue('sc_catalogs');
+			if(q==catlogname){
+			var cat_itemmmm=getcatitem.getValue('name');
+			catalog_workflow_array.push(cat_itemmmm);
+				}
+			}
+			return JSON.stringify(catalog_workflow_array);
+									
+		},
+	mapDataInsertion:function(){
+			var x = new GlideRecord('x_aetp_vyom_automa_ae_mapping');
+			x.initialize();
+			var jsonObj= this.getParameter('sysparm_name1');
+			var workAtt=this.getParameter('sysparm_name2');
+			var catalogName=this.getParameter('sysparm_name3');
+			var mapJson = JSON.parse(jsonObj);
+			x.u_json = JSON.stringify(mapJson);
+			x.u_workflow_name=mapJson.workflowName;
+			x.u_catalog_item=catalogName;
+			var temp_sysID = x.insert();
+			var retResponse =  false;
+			if(temp_sysID == null){
+			retResponse = true;
+			}else{
+			retResponse=false;
+			}
+			return retResponse;
+		},
+		getMapRecs: function() {
+			var gf1= new GlideRecord('x_aetp_vyom_automa_ae_mapping');
+			gf1.addQuery('u_catalog_item',"!=",'');
+			gf1.addQuery('u_workflow_name',"!=",'');
+			gf1.query();
+			var recordArr=[];
+			while(gf1.next()){
+				var catlogObj ={}; 
+					catlogObj.name =gf1.getValue('u_catalog_item');
+					catlogObj.workflow =gf1.getValue('u_workflow_name');
+					catlogObj.number = gf1.getValue('number');
+					recordArr.push(catlogObj); 
+				}
+				return JSON.stringify(recordArr);
+			},
+			getprevMappedData: function(){
+				var aeNumber= this.getParameter('sysparm_name1');
+				var gf1= new GlideRecord('x_aetp_vyom_automa_ae_mapping');
+				gf1.addQuery('u_catalog_item',"!=",'');
+				gf1.addQuery('u_workflow_name',"!=",'');
+				gf1.query();
+				while(gf1.next()){
+					if(gf1.getValue('number')== aeNumber){
+						var rowData={};
+						rowData.request = gf1.getValue('u_service_request');
+						rowData.catName = gf1.getValue('u_catalog_item');
+						rowData.wkName = gf1.getValue('u_workflow_name');
+						return JSON.stringify(rowData);
+						}
+					}
+				},
+				deleteMapedRecord:function(){
+					var gr = new GlideRecord('x_aetp_vyom_automa_ae_mapping');
+					var aeNumber= this.getParameter('sysparm_name1');
+					gr.addQuery('number', aeNumber); 
+					gr.query();
+					gr.next();
+					gr.deleteRecord();
+					return true;
+				},
+				amendRequest:function(){
+					var d;
+					var g=this.getParameter('sysparm_var');
+					var reqs= new GlideRecord('sc_request');
+					reqs.addQuery('number',g);
+					reqs.query();
+					while(reqs.next()){
+					reqs.state=2;
+					}
+				return true;
+				},
+	              getConfigData:function(){
+				  var sourcename;
+				  var orgcode;
+				  var arr=[];
+				  var get_config_data = new GlideRecord('x_aetp_vyom_automa_ae_configuration');
+					get_config_data.addQuery('source',"!=",'');
+					get_config_data.addQuery('organization_code',"!=",'');  
+				  get_config_data.query();
+				  if (get_config_data.next()) {
+				  sourcename=get_config_data.getValue('source');
+				  orgcode=get_config_data.getValue('organization_code');
+				  arr.push(sourcename);
+				  arr.push(orgcode);
+				  var configdata = JSON.stringify(arr); 
+				  return configdata;		  
+				}
+			  },
+				type: 'GetWorkflow'
+			});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-26 13:53:41</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ce70c311db3caf40717cfdb61d9619aa</sys_id>
+        <sys_mod_count>55</sys_mod_count>
+        <sys_name>GetWorkflow</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_include_ce70c311db3caf40717cfdb61d9619aa</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-11 11:00:01</sys_updated_on>
+    </sys_script_include>
+</record_update>

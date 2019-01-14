@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Automation Edge Configuration" max_length="40" name="x_aetp_automatione_ae_configuration" type="collection">
+        <element choice="1" label="Request Item Status On Failure From Automation Edge" max_length="40" name="aefailure" type="choice">
+            <choice>
+                <element label="Assigned" sequence="0" value="9"/>
+            </choice>
+        </element>
+        <element choice="1" label="Service Request Status on Success from Automation Edge" max_length="40" name="aereqsuccess" type="choice">
+            <choice>
+                <element label="Completed" sequence="0" value="Completed"/>
+            </choice>
+        </element>
+        <element choice="1" label="Request Item Status On Submission To Automation Edge" max_length="40" name="aesubmitted" type="choice">
+            <choice>
+                <element label="Automation In-Progress" sequence="0" value="6"/>
+            </choice>
+        </element>
+        <element choice="1" label="Request Item Status On Success From Automation Edge" max_length="40" name="aesuccess" type="string">
+            <choice>
+                <element label="Closed" sequence="0" value="8"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Organization Code" mandatory="true" max_length="40" name="organization_code" type="string"/>
+        <element label="Password" max_length="255" name="password" type="password2"/>
+        <element label="Source" mandatory="true" max_length="40" name="source" type="string"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element label="Tenant" max_length="40" name="tenant" type="string"/>
+        <element label="UserName" max_length="40" name="username" type="string"/>
+        <element label="Automation Workflow Names" max_length="4000" name="u_automation_workflow_names" type="string"/>
+        <element label="Failure Assignment Group" max_length="32" name="u_fail_group" reference="sys_user_group" type="reference"/>
+        <element label="Source Ticketing SysCode" max_length="40" name="u_syscode" type="string"/>
+        <element label="Tenant_ID" max_length="40" name="u_tenantid" type="string"/>
+        <element label="workflowJSON" max_length="4000" name="workflowjson" type="string_full_utf8"/>
+        <index name="index">
+            <element name="u_fail_group"/>
+        </index>
+    </element>
+</database>

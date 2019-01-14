@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function showMapRecords(){
+	var ga = new GlideAjax('GetWorkflow');
+	ga.addParam('sysparm_name','getMapRecs');
+	ga.getXML(getTableRecords);
+}
+function getTableRecords(response){
+	var getRec = response.responseXML.documentElement.getAttribute("answer");
+	var dataArr= JSON.parse(getRec);
+	var table = document.getElementById("aeMappingTable");
+	for(var i=0;i<dataArr.length;i++) {
+      console.log('name:'+ dataArr[i].name);
+	  console.log('workflow:'+ dataArr[i].workflow);
+	  console.log('workflow:'+ dataArr[i].number);	
+	  var tr = document.createElement('tr');  
+	  var td1 = document.createElement('td');
+	  var td2 = document.createElement('td');
+	  var td3= document.createElement('td');
+	  var td4= document.createElement('td');
+	
+	  td1.className="col-sm-3"; 
+	  td2.className="col-sm-3";
+	  td3.className="col-sm-3";
+	  td4.className="col-sm-3";
+	  td1.appendChild(document.createTextNode(dataArr[i].number)); 
+	  td2.appendChild(document.createTextNode(dataArr[i].name));
+	  td3.appendChild(document.createTextNode(dataArr[i].workflow));
+	  var deletebutton = document.createElement("button");
+      deletebutton.setAttribute('class', 'btn btn-default');
+      deletebutton.setAttribute('id', 'delete_'+i);		
+	  var span = document.createElement("span");
+	  span.id="deleteSpan_"+i;	
+      span.className ="glyphicon glyphicon-trash";
+      deletebutton.appendChild(span);			
+	  td4.appendChild(deletebutton);
+		//edit here
+		var editbutton = document.createElement("button");
+		 editbutton.setAttribute('class', 'btn btn-default');
+		 editbutton.setAttribute('id', 'edit_'+i);		
+	    var span1 = document.createElement("span");
+	    span1.id="editSpan_"+i;	
+        span1.className ="glyphicon glyphicon-pencil";
+        editbutton.appendChild(span1);			
+	    td4.appendChild(editbutton);
+		//till here
+	  tr.appendChild(td1); 
+	  tr.appendChild(td2);
+	  tr.appendChild(td3);
+	  tr.appendChild(td4);
+	  table.appendChild(tr);
+	  document.getElementById('delete_'+i).addEventListener("click",  function(e) {
+	  var id = e.target.id;
+	   deleteMapping(id);	   
+        });  
+		document.getElementById('edit_'+i).addEventListener("click",  function(e) {
+	    var id = e.target.id;
+	    editMapping(id);	   
+        }); 
+		}
+}
+function editMapping(id){
+	var id1 = id.split('_')[1];
+	var trCount= parseInt(id1)+1; 
+	var as = document.getElementById('aeMappingTable');
+    var trs = as.getElementsByTagName("tr")[trCount];
+    var aeNumber=trs.cells[0].innerHTML;
+	var c= confirm('Do you want to edit?');
+	if(c)
+	{
+		 window.location="x_aetp_automatione_AE_mapping_UI.do?number="+aeNumber+"&mode=edit";
+	}
+
+}
+
+function deleteMapping(id){
+	var id1 = id.split('_')[1];
+	var trCount= parseInt(id1)+1; 
+	var as = document.getElementById('aeMappingTable');
+    var trs = as.getElementsByTagName("tr")[trCount];
+    var aeNumber=trs.cells[0].innerHTML;
+	var r=confirm('Are You sure you want to delete?');
+	if(r){
+	  var ga = new GlideAjax('GetWorkflow');
+	  ga.addParam('sysparm_name','deleteMapedRecord'); 
+	  ga.addParam('sysparm_name1',aeNumber);
+	  ga.getXML(deleteRecordRes);
+	}
+	}
+function deleteRecordRes(response){
+  var deleteres= response.responseXML.documentElement.getAttribute("answer");
+	if (deleteres){
+		document.location.reload(true);
+	}
+	}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_aetp_automatione_AE_mapping_console.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.custom_font_header{
+font-family: 'PT Sans';
+}
+table, th {
+    border: 2px solid #f57e20;
+}
+	</style>
+</head>
+<body onload="showMapRecords()">
+	<div class="container fluid" style="background-color:#e7e9eb; border-width: 2px; border-style: groove; box-shadow: 0 1px 3px 1px black;">
+		<div class="row">
+			<div class="col-md-12">
+				<img src="AELogo.png"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<h3 class="custom_font_header">Mappings List</h3>
+			</div>
+			<div class="col-md-8">
+				<a href="x_aetp_automatione_AE_mapping_UI.do" id="newmapping">
+					<button class="btn btn-primary pull-right" type="button"
+						id="addNewMap">Add New</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="container fluid" id="mainDiv">
+		<div class="col-sm-12" style="vertical-align: middle;">
+			<div>
+				<table id="aeMappingTable" class="table table-bordered table-stripped" style="table-layout: fixed; padding-top: 1%;">
+					<tr style="background-color:#F57E20;">
+						<th>AE Number</th>
+						<th>Catalog Name</th>
+						<th>Workflow Name</th>
+						<th>Actions</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+</j:jelly>]]></html>
+        <name>AE_mapping_console</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-27 09:23:13</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>013cf625db34ef40717cfdb61d961931</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>AE_mapping_console</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_ui_page_013cf625db34ef40717cfdb61d961931</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-09 12:29:58</sys_updated_on>
+    </sys_ui_page>
+</record_update>

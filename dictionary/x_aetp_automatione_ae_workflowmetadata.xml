@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="AE:WorkflowMetaData" max_length="40" name="x_aetp_automatione_ae_workflowmetadata" type="collection">
+        <element label="JSON_data" max_length="4000" name="json_data" type="string"/>
+        <element display="true" label="Workflow_name" max_length="40" name="workflow_name" type="string"/>
+    </element>
+</database>

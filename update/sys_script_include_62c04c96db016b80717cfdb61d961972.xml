@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_aetp_automatione.AutomationAPI</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>AutomationAPI</name>
+        <script><![CDATA[var AutomationAPI = Class.create();
+AutomationAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+getCatalog: function(){
+			var catalog=new GlideRecord('sc_catalog');
+			catalog.addQuery('active',true);
+			catalog.query();
+			var catdata=[];
+			while(catalog.next()){
+				var catalogListItem = '"' + catalog.getValue('sys_id') + '":{ "title":"' +  catalog.getValue('title') + '"}';
+				catdata.push(catalogListItem);
+			}
+			gs.addInfoMessage(catdata);
+			return String(catdata);
+	},
+    type: 'AutomationAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>adarsh.sharma</sys_created_by>
+        <sys_created_on>2018-10-11 11:30:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>62c04c96db016b80717cfdb61d961972</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>AutomationAPI</sys_name>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_include_62c04c96db016b80717cfdb61d961972</sys_update_name>
+        <sys_updated_by>adarsh.sharma</sys_updated_by>
+        <sys_updated_on>2018-10-12 11:48:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

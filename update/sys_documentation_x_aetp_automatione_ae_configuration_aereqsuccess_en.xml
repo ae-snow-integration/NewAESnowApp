@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="aereqsuccess" label="Service Request Status on Success from Automation Edge" language="en" table="x_aetp_automatione_ae_configuration">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>aereqsuccess</element>
+            <help/>
+            <hint/>
+            <label>Service Request Status on Success from Automation Edge</label>
+            <language>en</language>
+            <name>x_aetp_automatione_ae_configuration</name>
+            <plural>Service Request Status on Success from Automation Edges</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>aishwarya.puri</sys_created_by>
+            <sys_created_on>2018-09-24 11:31:18</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>ea5e103cdb346f40717cfdb61d96194b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Service Request Status on Success from Automation Edge</sys_name>
+            <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+            <sys_update_name>sys_documentation_x_aetp_automatione_ae_configuration_aereqsuccess_en</sys_update_name>
+            <sys_updated_by>aishwarya.puri</sys_updated_by>
+            <sys_updated_on>2018-09-24 11:31:18</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

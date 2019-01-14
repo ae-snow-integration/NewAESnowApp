@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Workflow Metadata" max_length="40" name="x_aetp_automatione_workflow_metadata" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Attribute Name" mandatory="true" max_length="24" name="u_attribute_name" type="string"/>
+        <element default="String" label="Data Type" max_length="16" name="u_data_type" type="string"/>
+        <element label="Default Value" max_length="48" name="u_default_value" type="string"/>
+        <element label="Display Name" mandatory="true" max_length="32" name="u_display_name" type="string"/>
+        <element default="true" label="Optional" max_length="40" name="u_optional" type="boolean"/>
+        <element label="Order" max_length="40" name="u_order" type="integer"/>
+        <element label="Secret" max_length="40" name="u_secret" type="boolean"/>
+        <element label="Workflow Name" mandatory="true" max_length="40" name="u_workflow_name" type="string"/>
+    </element>
+</database>

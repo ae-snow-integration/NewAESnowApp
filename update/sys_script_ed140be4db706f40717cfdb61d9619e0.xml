@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_aetp_automatione_ae_staging</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_aetp_automatione_ae_staging">status=Completed^ORstatus=Failure^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="Completed"/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="=" or="true" value="Failure"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>AE_UpdateTaskOnStagingStatusChange</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var fail = "";
+	var comp = "";
+	var prog = "";
+	var ritm_num;
+	var serv_cat_num = current.u_service_catalog_number;
+	var statuss = current.status;
+	var failure_group;
+	var gr = new GlideRecord('x_aetp_automatione_ae_configuration');
+	gr.addQuery('workflowjson',"!=", '');
+	gr.query();  
+	while(gr.next())
+	{
+	if(statuss == "Failure"){
+	fail=gr.getDisplayValue('aefailure');
+	}
+	if(statuss == "Completed"){
+			comp=gr.getDisplayValue('aesuccess');
+	}
+	}
+	var tsk=new GlideRecord('sc_task');
+	tsk.addQuery('number',serv_cat_num);
+	tsk.query();
+	while(tsk.next()){
+	ritm_num=tsk.getDisplayValue('request_item');
+	if(tsk.number == serv_cat_num && statuss=="Failure"){
+	var fail_grp= new GlideRecord('x_aetp_automatione_ae_configuration');
+	fail_grp.addQuery('workflowjson',"!=", '');
+	fail_grp.query();
+	if(fail_grp.next())
+	failure_group=fail_grp.getValue('u_fail_group');
+	tsk.setValue('assignment_group',failure_group);
+	tsk.setValue('x_aetp_automatione_automated', false);
+	tsk.update(); 
+	}
+	if(tsk.number == serv_cat_num && statuss=="Completed"){
+			tsk.state=3;
+			tsk.update();
+			}
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-24 04:59:27</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ed140be4db706f40717cfdb61d9619e0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>AE_UpdateTaskOnStagingStatusChange</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>sys_script_ed140be4db706f40717cfdb61d9619e0</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 10:09:45</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=ed140be4db706f40717cfdb61d9619e0"/>
+</record_update>

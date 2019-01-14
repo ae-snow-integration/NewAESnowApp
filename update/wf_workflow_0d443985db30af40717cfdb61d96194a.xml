@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_workflow_version">
+    <wf_workflow_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_stages>{"ends":["49443985db30af40717cfdb61d96194b"],"subflows":[],"stages":{},"activities":{}}</activity_stages>
+        <after_business_rules>false</after_business_rules>
+        <checked_out/>
+        <checked_out_by/>
+        <column_renderer display_value="Workflow-driven">a56213111b030100adca1e094f0713ac</column_renderer>
+        <condition/>
+        <condition_type/>
+        <description/>
+        <expected_sequences>41443985db30af40717cfdb61d96194b,f7f7f109db30af40717cfdb61d9619d1,a405b1c5db30af40717cfdb61d9619ae,d2a73509db30af40717cfdb61d961909,8618f909db30af40717cfdb61d961968,49443985db30af40717cfdb61d96194b</expected_sequences>
+        <expected_time>1970-01-01 14:00:00</expected_time>
+        <expected_time_type/>
+        <full_sequences>41443985db30af40717cfdb61d96194b,f7f7f109db30af40717cfdb61d9619d1,a405b1c5db30af40717cfdb61d9619ae,d2a73509db30af40717cfdb61d961909,8618f909db30af40717cfdb61d961968,49443985db30af40717cfdb61d96194b</full_sequences>
+        <journal/>
+        <max_activity_count>100</max_activity_count>
+        <name>AE Integration Workflow</name>
+        <not_cacheable>false</not_cacheable>
+        <on_cancel><![CDATA[// This script executes if the workflow is cancelled.// The global variable context_sys_id contains the sys_id of the cancelled workflow context.]]></on_cancel>
+        <order>100</order>
+        <pin_type>set_by_activity</pin_type>
+        <published>true</published>
+        <relative_duration/>
+        <requires_ert>true</requires_ert>
+        <run_multiple>false</run_multiple>
+        <schedule/>
+        <stage_field>stage</stage_field>
+        <stage_order>computed</stage_order>
+        <start display_value="Begin">41443985db30af40717cfdb61d96194b</start>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>87e33185db30af40717cfdb61d9619e1</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-11 10:37:37</sys_updated_on>
+        <table>sc_req_item</table>
+        <timezone/>
+        <validated>true</validated>
+        <workflow display_value="AE Integration Workflow">0d443985db30af40717cfdb61d96194a</workflow>
+    </wf_workflow_version>
+    <wf_workflow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <description/>
+        <name>AE Integration Workflow</name>
+        <preview/>
+        <sys_class_name>wf_workflow</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0d443985db30af40717cfdb61d96194a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AE Integration Workflow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AutomationEdge" source="x_aetp_automatione">ee95772fdb20eb40717cfdb61d9619fe</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AutomationEdge">ee95772fdb20eb40717cfdb61d9619fe</sys_scope>
+        <sys_update_name>wf_workflow_0d443985db30af40717cfdb61d96194a</sys_update_name>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <table>sc_req_item</table>
+        <template>false</template>
+        <vars/>
+    </wf_workflow>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Completed</name>
+        <ola>1970-01-01 00:00:00</ola>
+        <order>1100</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>89443985db30af40717cfdb61d96194c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>complete</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Delivery</name>
+        <ola>1970-01-03 00:00:00</ola>
+        <order>140</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>81443985db30af40717cfdb61d96194d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>delivery</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Fulfillment</name>
+        <ola>1970-01-02 00:00:00</ola>
+        <order>120</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>01443985db30af40717cfdb61d96194d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>fulfillment</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Request Cancelled</name>
+        <ola>1970-01-01 00:00:00</ola>
+        <order>1000</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>09443985db30af40717cfdb61d96194c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>Request Cancelled</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Request Approved</name>
+        <ola>1970-01-01 00:00:00</ola>
+        <order>90</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>0d443985db30af40717cfdb61d96194c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>request_approved</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_stage action="INSERT_OR_UPDATE">
+        <name>Waiting for Approval</name>
+        <ola>1970-01-02 00:00:00</ola>
+        <order>100</order>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>8d443985db30af40717cfdb61d96194c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <value>waiting_for_approval</value>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_stage>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Begin">c7a5e32c0a0a0b3a002377c24ed8ea76</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>1</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Begin</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>41443985db30af40717cfdb61d96194b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:43:20</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>17</x>
+        <y>8</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=41443985db30af40717cfdb61d96194b"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Begin">41443985db30af40717cfdb61d96194b</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>c5443985db30af40717cfdb61d96194b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>5</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Create JSON Payloads</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:41:43</sys_created_on>
+        <sys_id>f7f7f109db30af40717cfdb61d9619d1</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:33:17</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>129</x>
+        <y>77</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=f7f7f109db30af40717cfdb61d9619d1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>f7f7f109db30af40717cfdb61d9619d1</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:41:43</sys_created_on>
+        <sys_id>c0183d09db30af40717cfdb61d9619e0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:33:17</sys_updated_on>
+        <value>try{&#13;
+	var mapData={};&#13;
+	var i=0;&#13;
+	mapData.paramData =[];&#13;
+	var tp;&#13;
+	var gr=new GlideRecord('x_aetp_automatione_ae_mapping');&#13;
+	gr.addQuery('u_catalog_item',"!=",'');&#13;
+	gr.addQuery('u_workflow_name',"!=",'');&#13;
+	gr.query();&#13;
+	var current_request_item=current.getDisplayValue('cat_item');&#13;
+	var curr_num="%%STAGING_SYSID%%";&#13;
+	var wkfl_name;&#13;
+	var wkfl_url;&#13;
+	var question_name;&#13;
+	var json_field;&#13;
+	while(gr.next()){&#13;
+		var cat_item=gr.getDisplayValue('u_catalog_item');&#13;
+		if(current_request_item==cat_item){&#13;
+			wkfl_name= gr.getDisplayValue('u_workflow_name');&#13;
+			wkfl_url= gr.getValue('u_workflow_url');&#13;
+			json_field= gr.getValue('u_json');&#13;
+		}&#13;
+	}&#13;
+	current.x_aetp_automatione_workflowname=wkfl_name;&#13;
+	var current_number=current.number;&#13;
+	var array_data=[];&#13;
+	var arr1=[];&#13;
+	var question_sysid=[];&#13;
+	var t=JSON.parse(json_field);&#13;
+	var count = Object.keys(t).length;&#13;
+	var p=0;&#13;
+	var mtom_table=new GlideRecord('sc_item_option_mtom');&#13;
+	mtom_table.addQuery('sc_item_option',"!=",' ');&#13;
+	mtom_table.query();&#13;
+	for (p = 0; p &lt; count; p++) {&#13;
+		var json_question=t.params[p].value;&#13;
+		while(mtom_table.next()){&#13;
+			var	mtom_request_number=mtom_table.getDisplayValue('request_item');&#13;
+			if(current_number==mtom_request_number){&#13;
+				var	question_value=mtom_table.getDisplayValue('sc_item_option');&#13;
+				var gr2 = new GlideRecord('sc_item_option');&#13;
+				gr2.addQuery('item_option_new',"!=",' ');&#13;
+				gr2.query();&#13;
+				while(gr2.next()){&#13;
+					if(gr2.sys_id==question_value){&#13;
+						var question2=gr2.getDisplayValue('item_option_new');&#13;
+						var Answer = gr2.getValue('value');&#13;
+						var param = {'question':question2, 'answer':Answer};&#13;
+						mapData.paramData[i]=param;&#13;
+						i++;&#13;
+					}&#13;
+				}&#13;
+			}&#13;
+		}&#13;
+		var Final_ae_mapping_json="";&#13;
+		tp=JSON.parse(json_field);&#13;
+		for(var c=0;c&lt;count;c++){&#13;
+			var json=tp[c];&#13;
+			var json_question=tp.params[c].value;&#13;
+			for(var l=0;l&lt;Object.keys(mapData.paramData).length;l++){&#13;
+				var map_data=mapData.paramData[l].question;&#13;
+				if(map_data==json_question){&#13;
+					tp.params[c].value=mapData.paramData[l].answer;&#13;
+					tp.sourceId=curr_num.toString();&#13;
+					tp.userId= gs.getUserName();	&#13;
+				}&#13;
+			current.x_aetp_automatione_json=JSON.stringify(tp);&#13;
+			}&#13;
+		}&#13;
+	}&#13;
+}catch(e){&#13;
+	gs.debug("Error occured in Create JSON Payloads Workflow component : " + e);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>f7f7f109db30af40717cfdb61d9619d1</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:41:43</sys_created_on>
+        <sys_id>c0183d09db30af40717cfdb61d9619e0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:33:17</sys_updated_on>
+        <value>try{&#13;
+	var mapData={};&#13;
+	var i=0;&#13;
+	mapData.paramData =[];&#13;
+	var tp;&#13;
+	var gr=new GlideRecord('x_aetp_automatione_ae_mapping');&#13;
+	gr.addQuery('u_catalog_item',"!=",'');&#13;
+	gr.addQuery('u_workflow_name',"!=",'');&#13;
+	gr.query();&#13;
+	var current_request_item=current.getDisplayValue('cat_item');&#13;
+	var curr_num="%%STAGING_SYSID%%";&#13;
+	var wkfl_name;&#13;
+	var wkfl_url;&#13;
+	var question_name;&#13;
+	var json_field;&#13;
+	while(gr.next()){&#13;
+		var cat_item=gr.getDisplayValue('u_catalog_item');&#13;
+		if(current_request_item==cat_item){&#13;
+			wkfl_name= gr.getDisplayValue('u_workflow_name');&#13;
+			wkfl_url= gr.getValue('u_workflow_url');&#13;
+			json_field= gr.getValue('u_json');&#13;
+		}&#13;
+	}&#13;
+	current.x_aetp_automatione_workflowname=wkfl_name;&#13;
+	var current_number=current.number;&#13;
+	var array_data=[];&#13;
+	var arr1=[];&#13;
+	var question_sysid=[];&#13;
+	var t=JSON.parse(json_field);&#13;
+	var count = Object.keys(t).length;&#13;
+	var p=0;&#13;
+	var mtom_table=new GlideRecord('sc_item_option_mtom');&#13;
+	mtom_table.addQuery('sc_item_option',"!=",' ');&#13;
+	mtom_table.query();&#13;
+	for (p = 0; p &lt; count; p++) {&#13;
+		var json_question=t.params[p].value;&#13;
+		while(mtom_table.next()){&#13;
+			var	mtom_request_number=mtom_table.getDisplayValue('request_item');&#13;
+			if(current_number==mtom_request_number){&#13;
+				var	question_value=mtom_table.getDisplayValue('sc_item_option');&#13;
+				var gr2 = new GlideRecord('sc_item_option');&#13;
+				gr2.addQuery('item_option_new',"!=",' ');&#13;
+				gr2.query();&#13;
+				while(gr2.next()){&#13;
+					if(gr2.sys_id==question_value){&#13;
+						var question2=gr2.getDisplayValue('item_option_new');&#13;
+						var Answer = gr2.getValue('value');&#13;
+						var param = {'question':question2, 'answer':Answer};&#13;
+						mapData.paramData[i]=param;&#13;
+						i++;&#13;
+					}&#13;
+				}&#13;
+			}&#13;
+		}&#13;
+		var Final_ae_mapping_json="";&#13;
+		tp=JSON.parse(json_field);&#13;
+		for(var c=0;c&lt;count;c++){&#13;
+			var json=tp[c];&#13;
+			var json_question=tp.params[c].value;&#13;
+			for(var l=0;l&lt;Object.keys(mapData.paramData).length;l++){&#13;
+				var map_data=mapData.paramData[l].question;&#13;
+				if(map_data==json_question){&#13;
+					tp.params[c].value=mapData.paramData[l].answer;&#13;
+					tp.sourceId=curr_num.toString();&#13;
+					tp.userId= gs.getUserName();	&#13;
+				}&#13;
+			current.x_aetp_automatione_json=JSON.stringify(tp);&#13;
+			}&#13;
+		}&#13;
+	}&#13;
+}catch(e){&#13;
+	gs.debug("Error occured in Create JSON Payloads Workflow component : " + e);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Create JSON Payloads">f7f7f109db30af40717cfdb61d9619d1</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:41:43</sys_created_on>
+        <sys_id>08183d09db30af40717cfdb61d9619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:41:43</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="End">c7a66f7d0a0a0b3a004544a6d2f14076</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>2</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>End</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>49443985db30af40717cfdb61d96194b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-27 06:00:54</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>562</x>
+        <y>445</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=49443985db30af40717cfdb61d96194b"/>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>6</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Sequential run script</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:42:21</sys_created_on>
+        <sys_id>8618f909db30af40717cfdb61d961968</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:51:56</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>715</x>
+        <y>313</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=8618f909db30af40717cfdb61d961968"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>8618f909db30af40717cfdb61d961968</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:42:21</sys_created_on>
+        <sys_id>5938b909db30af40717cfdb61d9619b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:51:56</sys_updated_on>
+        <value>var arr=[];&#13;
+var seq="";&#13;
+var ritmno="";&#13;
+var sysid="";&#13;
+var sys='';&#13;
+var gr=new GlideRecord('x_aetp_automatione_auxiliary_table');&#13;
+gr.addQuery('u_request',current.request);&#13;
+gr.addQuery('u_resolved',false);&#13;
+gr.orderBy('u_sequence');&#13;
+gr.query();&#13;
+if (gr.next())&#13;
+{&#13;
+ritmno=gr.u_ritm;&#13;
+seq =gr.u_sequence;&#13;
+sysid=gr.u_ritmsys_id;&#13;
+sys=sysid;&#13;
+}&#13;
+var gr1=new GlideRecord('sc_task');&#13;
+gr1.addQuery('request_item',sysid);&#13;
+gr1.query();&#13;
+if(gr1.next())&#13;
+{&#13;
+gr1.state=2;&#13;
+var gr2= new GlideRecord('sc_req_item');&#13;
+gr2.addQuery('number',ritmno);&#13;
+gr2.query();&#13;
+if(gr2.next()){&#13;
+gr2.state=2;&#13;
+gr2.update();&#13;
+}&#13;
+gr1.update();&#13;
+}&#13;
+	</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>8618f909db30af40717cfdb61d961968</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:42:21</sys_created_on>
+        <sys_id>5938b909db30af40717cfdb61d9619b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:51:56</sys_updated_on>
+        <value>var arr=[];&#13;
+var seq="";&#13;
+var ritmno="";&#13;
+var sysid="";&#13;
+var sys='';&#13;
+var gr=new GlideRecord('x_aetp_automatione_auxiliary_table');&#13;
+gr.addQuery('u_request',current.request);&#13;
+gr.addQuery('u_resolved',false);&#13;
+gr.orderBy('u_sequence');&#13;
+gr.query();&#13;
+if (gr.next())&#13;
+{&#13;
+ritmno=gr.u_ritm;&#13;
+seq =gr.u_sequence;&#13;
+sysid=gr.u_ritmsys_id;&#13;
+sys=sysid;&#13;
+}&#13;
+var gr1=new GlideRecord('sc_task');&#13;
+gr1.addQuery('request_item',sysid);&#13;
+gr1.query();&#13;
+if(gr1.next())&#13;
+{&#13;
+gr1.state=2;&#13;
+var gr2= new GlideRecord('sc_req_item');&#13;
+gr2.addQuery('number',ritmno);&#13;
+gr2.query();&#13;
+if(gr2.next()){&#13;
+gr2.state=2;&#13;
+gr2.update();&#13;
+}&#13;
+gr1.update();&#13;
+}&#13;
+	</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Sequential run script">8618f909db30af40717cfdb61d961968</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:42:21</sys_created_on>
+        <sys_id>9d38b909db30af40717cfdb61d9619b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:42:21</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Catalog Task">38891b6f0a0a0b1e00efdfdd77602027</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>3</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>task creation for stagging</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a405b1c5db30af40717cfdb61d9619ae</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 07:32:06</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>317</x>
+        <y>148</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=a405b1c5db30af40717cfdb61d9619ae"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2097f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>Task</value>
+        <variable display_value="">d7f61655c0a8016500793dd16da8beff</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1650</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2497f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">98b91165c0a800665c43a410b6f29fe5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2497f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>Fields</value>
+        <variable display_value="">d7ee92ddc0a8016500b307a89bbf3db1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>20</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2897f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7ec9d5cc0a8016500a4ed439b25f438</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>250</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2c97f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">c360b80b0a0a0ba97c533f11a0c9814c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6097f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f63ae0fc0a80066697c832ba44df4e1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>620</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6097f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>08fcd0830a0a0b2600079f56b1adb9ae</value>
+        <variable display_value="">8f6814cfc0a8006605477949c2fa6e6e</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6497f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f3c998c0a8016500d0204c0005453b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>2000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6897f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>// Set 'answer' to the number of seconds this timer should wait&#13;
+answer = 0;</value>
+        <variable display_value="">8f79bbdbc0a80066479b2d5ea4863c24</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>720</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97b909db30af40717cfdb61d9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6d4120c0a8006655edc4495deb43ab</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f79afac0a80165001b98ae987d06a5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>610</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6728b4c0a80066478f02b692654b58</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a097f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
+        <variable display_value="">8f630a2cc0a80066385b16d90585802d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>40</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a497f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>0</value>
+        <variable display_value="">c360af110a0a0ba97c533f11e09f464f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897b909db30af40717cfdb61d9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f5ec60dc0a800667063095e6702d1ee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>710</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6c1eb6c0a8006633bb0f81ef62d520</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f6e527c0a801650053e44a74e34315</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1700</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ac97f109db30af40717cfdb61d961985</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">acb99baa0a0a0ba300d0938182192ad4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ac97f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>sc_task</value>
+        <variable display_value="">d7eb710cc0a80165001dace00d26aee0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>700</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e097f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f68b111c0a800662a07dc10fa198c4f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e497f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f2bd33c0a801650021da8ff242a081</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1660</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e497f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 07:32:06</sys_updated_on>
+        <value>var a = current.getDisplayValue('cat_item');&#13;
+task.x_aetp_automatione_service_catalog_item = a; &#13;
+task.short_description=a;&#13;
+task.x_aetp_automatione_workflow_name = current.x_aetp_automatione_workflowname;&#13;
+task.x_aetp_automatione_json=current.getValue('x_aetp_automatione_json');&#13;
+task.x_aetp_automatione_parent_request_id=current.getDisplayValue('request');&#13;
+</value>
+        <variable display_value="">98b96f90c0a800666b58ec516f330397</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e897f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f722677c0a800664d3a879fadd87bfc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ec97f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">c360b4100a0a0ba97c533f1148325820</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ac97f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>sc_task</value>
+        <variable display_value="">d7eb710cc0a80165001dace00d26aee0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>20</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2897f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7ec9d5cc0a8016500a4ed439b25f438</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>40</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a497f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>0</value>
+        <variable display_value="">c360af110a0a0ba97c533f11e09f464f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897b909db30af40717cfdb61d9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f5ec60dc0a800667063095e6702d1ee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>250</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2c97f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">c360b80b0a0a0ba97c533f11a0c9814c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e897f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f722677c0a800664d3a879fadd87bfc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a097f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
+        <variable display_value="">8f630a2cc0a80066385b16d90585802d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6097f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f63ae0fc0a80066697c832ba44df4e1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>610</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6728b4c0a80066478f02b692654b58</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>620</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6097f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>08fcd0830a0a0b2600079f56b1adb9ae</value>
+        <variable display_value="">8f6814cfc0a8006605477949c2fa6e6e</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>700</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e097f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f68b111c0a800662a07dc10fa198c4f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>710</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6c1eb6c0a8006633bb0f81ef62d520</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>720</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97b909db30af40717cfdb61d9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">8f6d4120c0a8006655edc4495deb43ab</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2497f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>Fields</value>
+        <variable display_value="">d7ee92ddc0a8016500b307a89bbf3db1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e497f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f2bd33c0a801650021da8ff242a081</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6497f109db30af40717cfdb61d961988</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f3c998c0a8016500d0204c0005453b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2097f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>Task</value>
+        <variable display_value="">d7f61655c0a8016500793dd16da8beff</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a897f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f6e527c0a801650053e44a74e34315</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6c97f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">d7f79afac0a80165001b98ae987d06a5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ec97f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">c360b4100a0a0ba97c533f1148325820</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1650</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>2497f109db30af40717cfdb61d961986</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">98b91165c0a800665c43a410b6f29fe5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1660</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>e497f109db30af40717cfdb61d961989</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 07:32:06</sys_updated_on>
+        <value>var a = current.getDisplayValue('cat_item');&#13;
+task.x_aetp_automatione_service_catalog_item = a; &#13;
+task.short_description=a;&#13;
+task.x_aetp_automatione_workflow_name = current.x_aetp_automatione_workflowname;&#13;
+task.x_aetp_automatione_json=current.getValue('x_aetp_automatione_json');&#13;
+task.x_aetp_automatione_parent_request_id=current.getDisplayValue('request');&#13;
+</value>
+        <variable display_value="">98b96f90c0a800666b58ec516f330397</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>1700</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>ac97f109db30af40717cfdb61d961985</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value/>
+        <variable display_value="">acb99baa0a0a0ba300d0938182192ad4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a405b1c5db30af40717cfdb61d9619ae</document_key>
+        <order>2000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>6897f109db30af40717cfdb61d961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+        <value>// Set 'answer' to the number of seconds this timer should wait&#13;
+answer = 0;</value>
+        <variable display_value="">8f79bbdbc0a80066479b2d5ea4863c24</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="task creation for stagging">a405b1c5db30af40717cfdb61d9619ae</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:39:34</sys_created_on>
+        <sys_id>a097b909db30af40717cfdb61d9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:39:34</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>4</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>To check whether sequential or not</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>d2a73509db30af40717cfdb61d961909</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:39:21</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+        <x>508</x>
+        <y>219</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=d2a73509db30af40717cfdb61d961909"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>21c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>a5c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:39:21</sys_updated_on>
+        <value>current.request.state=2;&#13;
+answer=checkSeq();&#13;
+function checkSeq(){&#13;
+	var rs=new GlideRecord('sc_request');&#13;
+	var st;&#13;
+	rs.addQuery('sys_id',current.request);&#13;
+	rs.query();&#13;
+	if(rs.next())&#13;
+	{&#13;
+	rs.state=2;&#13;
+	st=rs.state;&#13;
+	}&#13;
+	rs.update();&#13;
+	if(current.x_aetp_automatione_sequential==false &amp;&amp; st==2){&#13;
+	current.state=2;&#13;
+	var gr=new GlideRecord('sc_task');&#13;
+    gr.addQuery('request_item',current.sys_id);&#13;
+    gr.query();&#13;
+    while(gr.next()){&#13;
+	gr.state=2;&#13;
+	gr.update();&#13;
+	 }&#13;
+	return 'no';	&#13;
+}&#13;
+	return 'yes';&#13;
+}&#13;
+</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>e1c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>21c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>e1c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>d2a73509db30af40717cfdb61d961909</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>a5c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-28 09:39:21</sys_updated_on>
+        <value>current.request.state=2;&#13;
+answer=checkSeq();&#13;
+function checkSeq(){&#13;
+	var rs=new GlideRecord('sc_request');&#13;
+	var st;&#13;
+	rs.addQuery('sys_id',current.request);&#13;
+	rs.query();&#13;
+	if(rs.next())&#13;
+	{&#13;
+	rs.state=2;&#13;
+	st=rs.state;&#13;
+	}&#13;
+	rs.update();&#13;
+	if(current.x_aetp_automatione_sequential==false &amp;&amp; st==2){&#13;
+	current.state=2;&#13;
+	var gr=new GlideRecord('sc_task');&#13;
+    gr.addQuery('request_item',current.sys_id);&#13;
+    gr.query();&#13;
+    while(gr.next()){&#13;
+	gr.state=2;&#13;
+	gr.update();&#13;
+	 }&#13;
+	return 'no';	&#13;
+}&#13;
+	return 'yes';&#13;
+}&#13;
+</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="To check whether sequential or not">d2a73509db30af40717cfdb61d961909</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default display_value="No">c1eff6430a0a0b59000f955abe842c94</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>200</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>6dc739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="To check whether sequential or not">d2a73509db30af40717cfdb61d961909</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default display_value="Yes">c1ef63200a0a0b59005ef89bae78feb7</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Yes</name>
+        <order>100</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:40:28</sys_created_on>
+        <sys_id>e9c739c5db30af40717cfdb61d961965</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:40:28</sys_updated_on>
+    </wf_condition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">c5443985db30af40717cfdb61d96194b</condition>
+        <from display_value="Begin">41443985db30af40717cfdb61d96194b</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:44:02</sys_created_on>
+        <sys_id>35983d09db30af40717cfdb61d96194e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:44:02</sys_updated_on>
+        <to display_value="Create JSON Payloads">f7f7f109db30af40717cfdb61d9619d1</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">6dc739c5db30af40717cfdb61d961965</condition>
+        <from display_value="To check whether sequential or not">d2a73509db30af40717cfdb61d961909</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:44:35</sys_created_on>
+        <sys_id>39b8bd09db30af40717cfdb61d961971</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:44:35</sys_updated_on>
+        <to display_value="End">49443985db30af40717cfdb61d96194b</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">a097b909db30af40717cfdb61d9619d4</condition>
+        <from display_value="task creation for stagging">a405b1c5db30af40717cfdb61d9619ae</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:44:10</sys_created_on>
+        <sys_id>7398bdc5db30af40717cfdb61d9619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:44:10</sys_updated_on>
+        <to display_value="To check whether sequential or not">d2a73509db30af40717cfdb61d961909</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">9d38b909db30af40717cfdb61d9619b2</condition>
+        <from display_value="Sequential run script">8618f909db30af40717cfdb61d961968</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:45:01</sys_created_on>
+        <sys_id>84d83d09db30af40717cfdb61d961979</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:45:01</sys_updated_on>
+        <to display_value="End">49443985db30af40717cfdb61d96194b</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">e9c739c5db30af40717cfdb61d961965</condition>
+        <from display_value="To check whether sequential or not">d2a73509db30af40717cfdb61d961909</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:44:14</sys_created_on>
+        <sys_id>f0a8f149db30af40717cfdb61d9619f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:44:14</sys_updated_on>
+        <to display_value="Sequential run script">8618f909db30af40717cfdb61d961968</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">08183d09db30af40717cfdb61d9619e0</condition>
+        <from display_value="Create JSON Payloads">f7f7f109db30af40717cfdb61d9619d1</from>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:44:06</sys_created_on>
+        <sys_id>fe98bd09db30af40717cfdb61d961970</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:44:06</sys_updated_on>
+        <to display_value="task creation for stagging">a405b1c5db30af40717cfdb61d9619ae</to>
+    </wf_transition>
+    <wf_estimated_runtime_config action="INSERT_OR_UPDATE">
+        <estimated_run_time/>
+        <no_of_data_points>1</no_of_data_points>
+        <percentage_threshold_ert>20</percentage_threshold_ert>
+        <sys_created_by>aishwarya.puri</sys_created_by>
+        <sys_created_on>2018-09-25 12:25:08</sys_created_on>
+        <sys_id>49443985db30af40717cfdb61d96194a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aishwarya.puri</sys_updated_by>
+        <sys_updated_on>2018-09-25 12:25:08</sys_updated_on>
+        <workflow_version display_value="AE Integration Workflow">87e33185db30af40717cfdb61d9619e1</workflow_version>
+    </wf_estimated_runtime_config>
+    <wf_workflow_version action="update_multiple" query="workflow=0d443985db30af40717cfdb61d96194a^sys_id!=87e33185db30af40717cfdb61d9619e1">
+        <published>false</published>
+    </wf_workflow_version>
+</record_update>

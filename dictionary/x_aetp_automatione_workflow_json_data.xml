@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Workflow JSON data" max_length="40" name="x_aetp_automatione_workflow_json_data" type="collection">
+        <element label="Default Value" max_length="40" name="u_defaultvalue" type="string"/>
+        <element label="Display Name" max_length="40" name="u_display_name" type="string"/>
+        <element label="Name" max_length="40" name="u_name" type="string"/>
+        <element label="Optional" max_length="40" name="u_optional" type="boolean"/>
+        <element label="Order" max_length="40" name="u_order" type="integer"/>
+        <element label="Secret" max_length="40" name="u_secret" type="boolean"/>
+        <element label="Type" max_length="40" name="u_type" type="string"/>
+        <element label="Workflow List" max_length="40" name="u_workflow_list" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Auxiliary Table" max_length="40" name="x_aetp_automatione_auxiliary_table" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Sequential" max_length="40" name="sequential" type="boolean"/>
+        <element label="Request" max_length="40" name="u_request" type="string"/>
+        <element label="Resolved" max_length="40" name="u_resolved" type="boolean"/>
+        <element label="RITM" max_length="40" name="u_ritm" type="string"/>
+        <element label="RITM_sysid" max_length="40" name="u_ritmsys_id" type="string"/>
+        <element label="Sequence" max_length="40" name="u_sequence" type="string"/>
+    </element>
+</database>
